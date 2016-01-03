@@ -11,8 +11,27 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="app/vendor.d4b697d0.css">
-    <link rel="stylesheet" href="app/app.fd7cfdc2.css">
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+      <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css" />
+      <link rel="stylesheet" href="bower_components/videojs/dist/video-js/video-js.css" />
+      <link rel="stylesheet" href="bower_components/flat-ui/dist/css/flat-ui.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,client}) app/app.css -->
+      <link rel="stylesheet" href="app/app.css">
+      <!-- injector:css -->
+      <link rel="stylesheet" href="app/admin/admin.css">
+      <link rel="stylesheet" href="app/app.css">
+      <link rel="stylesheet" href="app/home/home.css">
+      <link rel="stylesheet" href="app/join/join.css">
+      <link rel="stylesheet" href="app/main/main.css">
+      <link rel="stylesheet" href="app/ply/ply.css">
+      <link rel="stylesheet" href="components/footer/footer.css">
+      <link rel="stylesheet" href="components/oauth-buttons/oauth-buttons.css">
+      <!-- endinjector -->
+    <!-- endbuild -->
   </head>
   <body ng-app="plyappApp">
     <!--[if lt IE 7]>
@@ -37,7 +56,58 @@
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
-    <script src="app/vendor.f11ddfb9.js"></script>
-    <script src="app/app.2ee29953.js"></script>
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="bower_components/videojs/dist/video-js/video.js"></script>
+      <script src="bower_components/flat-ui/dist/js/flat-ui.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="bower_components/angular-socket-io/socket.js"></script>
+      <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
+      <!-- endbower -->
+      <script src="socket.io-client/socket.io.js"></script>
+    <!-- endbuild -->
+    <!-- build:js(.tmp) app/app.js -->
+      <script src="app/app.js"></script>
+      <!-- injector:js -->
+      <script src="app/admin/admin.module.js"></script>
+      <script src="components/auth/auth.module.js"></script>
+      <script src="components/util/util.module.js"></script>
+      <script src="app/ply/ply.js"></script>
+      <script src="app/admin/admin.controller.js"></script>
+      <script src="app/account/account.js"></script>
+      <script src="app/admin/admin.router.js"></script>
+      <script src="app/app.constant.js"></script>
+      <script src="app/home/home.controller.js"></script>
+      <script src="app/home/home.js"></script>
+      <script src="app/join/join.controller.js"></script>
+      <script src="app/join/join.js"></script>
+      <script src="app/main/main.controller.js"></script>
+      <script src="app/main/main.js"></script>
+      <script src="app/ply/ply.controller.js"></script>
+      <script src="app/account/login/login.controller.js"></script>
+      <script src="app/account/settings/settings.controller.js"></script>
+      <script src="components/auth/auth.service.js"></script>
+      <script src="components/auth/interceptor.service.js"></script>
+      <script src="components/auth/router.decorator.js"></script>
+      <script src="components/auth/user.service.js"></script>
+      <script src="components/counter/countup.js"></script>
+      <script src="components/footer/footer.directive.js"></script>
+      <script src="components/mongoose-error/mongoose-error.directive.js"></script>
+      <script src="components/navbar/navbar.controller.js"></script>
+      <script src="components/navbar/navbar.directive.js"></script>
+      <script src="components/oauth-buttons/oauth-buttons.controller.js"></script>
+      <script src="components/oauth-buttons/oauth-buttons.directive.js"></script>
+      <script src="components/socket/socket.service.js"></script>
+      <script src="app/account/signup/signup.controller.js"></script>
+      <script src="components/util/util.service.js"></script>
+      <!-- endinjector -->
+    <!-- endbuild -->
   </body>
 </html>

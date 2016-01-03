@@ -10,4 +10,3 @@ var ThingSchema = new Schema({
 });
 
 module.exports = mongoose.model('Thing', ThingSchema);
-//# sourceMappingURL=thing.model.js.map

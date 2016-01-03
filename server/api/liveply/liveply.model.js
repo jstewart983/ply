@@ -10,4 +10,3 @@ var LiveplySchema = new Schema({
 });
 
 module.exports = mongoose.model('Liveply', LiveplySchema);
-//# sourceMappingURL=liveply.model.js.map

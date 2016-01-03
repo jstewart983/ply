@@ -1,0 +1,54 @@
+<navbar></navbar>
+<div ng-hide="home.isFirstTime()" class="container">
+  <div class="hero-unit row" id="banner">
+    <h2 class="landing-text">Looks like you haven't created any Ply's yet</h2>
+  </div>
+  <div class="hero-unit row" id="banner">
+    <div class="col-xs-12">
+      <button type="button" name="button" class="landing-button btn">Let's get started!</button>
+    </div>
+  </div>
+</div>
+<div ng-show="home.isFirstTime()" class="container">
+  <div class="hero-unit row" id="banner">
+    <div class="col-xs-6">
+      <table class="table">
+        <thead>
+          <th>
+            name
+          </th>
+          <th>
+            Plyrs
+          </th>
+          <th>
+            Active?
+          </th>
+          <th>
+
+          </th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="ply in home.myplys">
+            <td>
+              {{ply.name}}
+            </td>
+            <td>
+              {{ply.plyrs.length}}
+            </td>
+            <td>
+              {{ply.activeFlag}}
+            </td>
+            <td>
+              <button type="button" name="button" class="landing-button-sm btn">Configure</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-xs-6">
+      <div style="margin-top:" class="row">
+
+      </div>
+    </div>
+  </div>
+</div>

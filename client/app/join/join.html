@@ -1,0 +1,94 @@
+<navbar ng-show="join.isLoggedIn()"></navbar>
+<div class="hero-unit container" id="banner">
+  <div ng-hide="join.isLoggedIn()"  class="row">
+    <img style="width:55px;height:27px;" src="assets/images/ply4.png" alt="ply">
+  </div>
+
+</div>
+<div class="row">
+  <p class="landing-text">Choose a username and then join an active Ply</p>
+</div>
+<div>
+<div class="row">
+
+    <!--<div class="hero-unit row" id="banner">
+      <div class="col-xs-12">
+        <h6 class="landing-text">You don't need to create an account to join a Ply.</h6>
+
+      </div>
+
+    </div>
+    <div class="landing-text row">
+      <div class="col-lg-4 col-lg-offset-4 clearfix">
+        <ol>
+          <li style="text-align:left;">Choose a username</li>
+          <li style="text-align:left;">Enter Ply code</li>
+          <li style="text-align:left;">That's it!</li>
+        </ol>
+      </div>
+    </div>-->
+    <div style="margin-top:1%;" class="hero-unit row" id="banner">
+      <form name="form">
+        <button style="margin-bottom:10px;" class="error btn btn-sm" ng-if="join.error.msg" type="button" name="button">{{join.error.msg}} <a ng-click="join.clearError()"><span class="fui-cross"></span></a></button>
+      <div ng-hide="join.isLoggedIn()" class="col-xs-12">
+        <h7 class="landing-text">Your username:</h7>
+        <h5 ng-hide="join.usernameSet()" class="landing-text"><input placeholder="belieber9" ng-model="join.plyAttendee.username" class="join-input" type="text" name="name" value=""></h5>
+        <button class="error btn btn-lg" ng-show="join.usernameSet()" type="button" name="button">{{join.$cookies.plyuser}} <a ng-click="join.editUsername()"><span class="fui-cross"></span></a></button>
+      </div>
+      <div ng-show="join.isLoggedIn()" class="col-xs-12">
+        <h7 class="landing-text">Your username:</h7>
+        <button class="error btn btn-lg" type="button" name="button">{{join.getCurrentUser().email}} <a ng-click="join.editUsername()"></a></button>
+      </div>
+      <div ng-hide="join.isLoggedIn()" class="row">
+        <div ng-hide="join.usernameSet()" class="col-xs-8 col-xs-offset-2">
+          <button  ng-click="join.setUsername(join.plyAttendee.username)" class="landing-button btn btn-sm" type="button" name="button">Set Username</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="hero-unit row" id="bannerjoin">
+      <div class="col-xs-12">
+        <table class="table">
+          <header>
+            Active Ply's
+          </header>
+          <thead>
+            <th>
+              Name
+            </th>
+            <th>
+              Host
+            </th>
+            <th>
+              Plyr's
+            </th>
+            <th>
+
+            </th>
+          </thead>
+          <tbody ng-repeat="ply in join.awesomeThings">
+              <tr>
+                <td>
+                  {{ply.name}}
+                </td>
+                <td>
+                  {{ply.admin}}
+                </td>
+                <td>
+                  {{ply.plyrs.length}}
+                </td>
+                <td>
+                  <button ng-hide="join.isPlyr($index)"  type="submit" ng-click="join.addPlyr(ply._id)" class="landing-button-sm btn">Join <span class="fui-check"></span></button>
+                  <button ng-show="join.isPlyr($index)"  type="submit" class="landing-button-join btn">Joined <span style="color:#2ecc71;" class="fui-check"></span></button>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </form>
+</div>
+
+
+
+</div>

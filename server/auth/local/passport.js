@@ -1,45 +1,39 @@
-'use strict';
-
-var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
-
-var _passport = require('passport');
-
-var _passport2 = _interopRequireDefault(_passport);
-
-var _passportLocal = require('passport-local');
+import passport from 'passport';
+import {Strategy as LocalStrategy} from 'passport-local';
 
 function localAuthenticate(User, email, password, done) {
   User.findOneAsync({
     email: email.toLowerCase()
-  }).then(function (user) {
-    if (!user) {
-      return done(null, false, {
-        message: 'This email is not registered.'
-      });
-    }
-    user.authenticate(password, function (authError, authenticated) {
-      if (authError) {
-        return done(authError);
-      }
-      if (!authenticated) {
+  })
+    .then(function(user) {
+      if (!user) {
         return done(null, false, {
-          message: 'This password is not correct.'
+          message: 'This email is not registered.'
         });
-      } else {
-        return done(null, user);
       }
+      user.authenticate(password, function(authError, authenticated) {
+        if (authError) {
+          return done(authError);
+        }
+        if (!authenticated) {
+          return done(null, false, {
+            message: 'This password is not correct.'
+          });
+        } else {
+          return done(null, user);
+        }
+      });
+    })
+    .catch(function(err) {
+      return done(err);
     });
-  })['catch'](function (err) {
-    return done(err);
-  });
 }
 
-exports.setup = function (User, config) {
-  _passport2['default'].use(new _passportLocal.Strategy({
+exports.setup = function(User, config) {
+  passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password' // this is the virtual field on the model
-  }, function (email, password, done) {
+  }, function(email, password, done) {
     return localAuthenticate(User, email, password, done);
   }));
 };
-//# sourceMappingURL=passport.js.map

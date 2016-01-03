@@ -10,4 +10,3 @@ var PlyrSchema = new Schema({
 });
 
 module.exports = mongoose.model('Plyr', PlyrSchema);
-//# sourceMappingURL=plyr.model.js.map

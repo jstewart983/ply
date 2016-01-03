@@ -24,11 +24,10 @@ for (var e in events) {
 }
 
 function emitEvent(event) {
-  return function (doc) {
+  return function(doc) {
     PlyrEvents.emit(event + ':' + doc._id, doc);
     PlyrEvents.emit(event, doc);
-  };
+  }
 }
 
 module.exports = PlyrEvents;
-//# sourceMappingURL=plyr.events.js.map

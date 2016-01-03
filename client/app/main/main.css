@@ -1,0 +1,109 @@
+body{
+  background-color: #e74c3c;
+  font-weight: 100;
+}
+input:focus { outline: none; }
+
+.thing-form {
+  margin: 20px 0;
+}
+.landing-text{
+  color:#fff;
+  text-align:center;
+}
+.landing-link{
+  border-bottom: 2px solid #fff;
+  color:#fff;
+}
+.landing-link:hover{
+  color:#9b59b6;
+  border-bottom: 2px solid #9b59b6;
+}
+
+.landing-button{
+  color:#fff;
+  border: 2px solid #fff;
+  background-color:#e74c3c;
+  width:100%;
+  text-align: center;
+  font-weight: 150;
+}
+.landing-button:hover{
+  color:#fff;
+  background-color: #9b59b6;
+  border-color: #9b59b6;
+}
+
+.landing-button:active{
+  color:#fff;
+  background-color: #8e44ad;
+  border-color: #8e44ad;
+}
+
+.landing-button-sm{
+  color:#fff;
+  border: 2px solid #fff;
+  background-color:#e74c3c;
+  text-align: center;
+  font-weight: 150;
+}
+.landing-button-sm:hover{
+  color:#e74c3c;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+#banner {
+  margin-top: 3%;
+  border-bottom: none;
+  background-color: #e74c3c;
+
+}
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color:#e74c3c;
+}
+
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #4393B9;
+}
+
+.navbar-text {
+  margin-left: 15px;
+}
+
+.btn-login{
+  background-color:#e74c3c;
+}
+.btn-login:hover{
+  background-color: #c0392b;
+}
+.btn-login:active{
+  background-color: #c0392b;
+}
+.btn-login:visited{
+  background-color: #e74c3c;
+}
+
+
+.building1{
+  font-size: 50px !important;
+  width:100%;
+  vertical-align: bottom;
+  font
+}
+
+.building2{
+  font-size: 400px !important;
+  width:100%;
+  vertical-align: bottom;
+
+}

@@ -9,7 +9,7 @@ var PlyEvents = require('./ply.events');
 // Model events to emit
 var events = ['save', 'remove'];
 
-exports.register = function (socket) {
+exports.register = function(socket) {
   // Bind model events to socket events
   for (var i = 0, eventsLength = events.length; i < eventsLength; i++) {
     var event = events[i];
@@ -20,15 +20,15 @@ exports.register = function (socket) {
   }
 };
 
+
 function createListener(event, socket) {
-  return function (doc) {
+  return function(doc) {
     socket.emit(event, doc);
   };
 }
 
 function removeListener(event, listener) {
-  return function () {
+  return function() {
     PlyEvents.removeListener(event, listener);
   };
 }
-//# sourceMappingURL=ply.socket.js.map

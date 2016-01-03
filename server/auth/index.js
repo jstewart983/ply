@@ -1,31 +1,17 @@
 'use strict';
 
-var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
-
-var _express = require('express');
-
-var _express2 = _interopRequireDefault(_express);
-
-var _passport = require('passport');
-
-var _passport2 = _interopRequireDefault(_passport);
-
-var _configEnvironment = require('../config/environment');
-
-var _configEnvironment2 = _interopRequireDefault(_configEnvironment);
-
-var _apiUserUserModel = require('../api/user/user.model');
-
-var _apiUserUserModel2 = _interopRequireDefault(_apiUserUserModel);
+import express from 'express';
+import passport from 'passport';
+import config from '../config/environment';
+import User from '../api/user/user.model';
 
 // Passport Configuration
-require('./local/passport').setup(_apiUserUserModel2['default'], _configEnvironment2['default']);
-require('./google/passport').setup(_apiUserUserModel2['default'], _configEnvironment2['default']);
+require('./local/passport').setup(User, config);
+require('./google/passport').setup(User, config);
 
-var router = _express2['default'].Router();
+var router = express.Router();
 
 router.use('/local', require('./local'));
 router.use('/google', require('./google'));
 
 module.exports = router;
-//# sourceMappingURL=index.js.map

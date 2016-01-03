@@ -24,11 +24,10 @@ for (var e in events) {
 }
 
 function emitEvent(event) {
-  return function (doc) {
+  return function(doc) {
     LiveplyEvents.emit(event + ':' + doc._id, doc);
     LiveplyEvents.emit(event, doc);
-  };
+  }
 }
 
 module.exports = LiveplyEvents;
-//# sourceMappingURL=liveply.events.js.map
